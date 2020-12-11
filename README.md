@@ -21,6 +21,6 @@ Function ID | Function Category
 80-89 | 10 binary classification problems from MNIST group comparison
 90-99 | 10 binary classification problems from CIFAR-10 group comparison
 
-For further details on the contest including details on the benchmarks as well as the solutions of the different teams and their performance, please refer to our [arXiv paper] (https://arxiv.org/abs/2012.02530).
+For further details on the contest including details on the benchmarks as well as the solutions of the different teams and their performance, please refer to our [arXiv paper](https://arxiv.org/abs/2012.02530).
 
 
