@@ -1,4 +1,6 @@
-# Problems and Results of IWLS 2022 Programming Contest
+---
+
+## Problems and Results of IWLS 2022 Programming Contest
 
 This repository contains the benchmarks of IWLS 2022 Programming Contest and 
 the circuits produced by the participants in response to the challenge.  
@@ -15,7 +17,7 @@ and Walter Lau Neto (IWLS 2022 Contest Session Chair).
 
 ---
 
-## Benchmarks
+### Benchmarks
 
 The benchmarks available in this repository are composed of 100 functions in the text format, as follows: 
 
@@ -42,7 +44,7 @@ announcement it believed to be helpful because it gives future participants more
 
 ---
 
-## Participants
+### Participants
 
 * Team EPFL (École Polytechnique Fédérale de Lausanne)
   * Andrea Costamagna, Siang-Yun Lee, Alessandro Tempia Calvino, Hanyu Wang, Mingfei Yu, Professor Giovanni De Micheli
@@ -61,23 +63,26 @@ announcement it believed to be helpful because it gives future participants more
 
 ---
        
-## Submissions
+### Submissions
 
 With the participant's permission, the circuits submitted to the contest can be found [here](https://github.com/alanminko/iwls2022-ls-contest/tree/main/submissions).
 
 ---
 
-## Winners
+### Winners
 
 The results of the competition are summarized in the organizer's presentation 
 ([PDF](https://github.com/alanminko/iwls2022-ls-contest/IWLS_2022_Contest_Presentation.pdf), 
 [PPT](https://github.com/alanminko/iwls2022-ls-contest/IWLS_2022_Contest_Presentation.ppt)).
 
-The winners are the three teams who received the highest score according to the contest rules:
+The winners are the three teams who received the highest score according to the [contest rules](https://github.com/alanminko/iwls2022-ls-contest/blob/main/IWLS_2022_Programming_Contest.pdf):
 
-* 1st place (score 9387): Team EPFL (École Polytechnique Fédérale de Lausanne) -- Andrea Costamagna, Siang-Yun Lee, Alessandro Tempia Calvino, Hanyu Wang, Mingfei Yu, Professor Giovanni De Micheli
-* 2nd place (score 9117): Team UCB (University of California, Berkeley) -- Yukio Miyasaka
-* 3rd place (score 8320): Team TUW (Technische Universität Wien) -- Franz-Xaver Reichl, Friedrich Slivovsky, Stefan Szeider
+* 1st place (score 9387)
+  * Team EPFL (École Polytechnique Fédérale de Lausanne) -- Andrea Costamagna, Siang-Yun Lee, Alessandro Tempia Calvino, Hanyu Wang, Mingfei Yu, Professor Giovanni De Micheli
+* 2nd place (score 9117)
+  * Team UCB (University of California, Berkeley) -- Yukio Miyasaka
+* 3rd place (score 8320)
+  * Team TUW (Technische Universität Wien) -- Franz-Xaver Reichl, Friedrich Slivovsky, Stefan Szeider
 
 Congratulations to the winners!
 
