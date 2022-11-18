@@ -1,97 +1,26 @@
----
+# Logic Synthesis Meets Machine Learning: Trading Exactness for Generalization 
 
-## Problems and Results of IWLS 2022 Programming Contest
+This repository contains the benchmarks for the [IWLS 2020 programming contest](https://arxiv.org/abs/2012.02530).
 
-This repository contains the benchmarks of IWLS 2022 Programming Contest and 
-the circuits produced by the participants in response to the challenge.  
-
-The goal of the contest was to synthesize [AIGs](https://en.wikipedia.org/wiki/And-inverter_graph) 
-with the minimal number of two-input and-nodes for a set of completely-specified multi-output Boolean functions 
-represented using truth tables. The resulting AIGs were submited in [binary AIGER format](http://fmv.jku.at/aiger/).
-For the detailed information about the rules and the evaluation criteria, please refer to the 
-[contest announcement](https://github.com/alanminko/iwls2022-ls-contest/blob/main/IWLS_2022_Programming_Contest.pdf).
-
-The contest was organized by Alan Mishchenko and Satrajit Chatterjee (IWLS 2022 Contest Chairs) 
-with active support from Luca Amarù (IWLS 2022 General Chair), Eleonora Testa (IWLS 2022 Program Chair),
-and Walter Lau Neto (IWLS 2022 Contest Session Chair). 
-
----
-
-### Benchmarks
-
-The benchmarks available in this repository are composed of 100 functions in the text format, as follows: 
-
-Benchnmark ID | Function Category
-------------- | -----------------
-00-01 | Known random-looking functions
-02-07 | Random and decomposable random functions
-08-09 | s-box and inverse s-box from [here](https://en.wikipedia.org/wiki/Rijndael_S-box)
-10-15 | 5-input through 15-input [majority functions](https://en.wikipedia.org/wiki/Majority_function)
-16-27 | N-input N-output [binary sorters](https://en.wikipedia.org/wiki/Sorting_network)
-28-49 | Selected [Espresso benchmarks](https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/espresso/espresso-book-examples.tar.gz) with permuted inputs
-50-67 | Selected arithmetic functions with permuted inputs and dropped outputs
-68-99 | 12-input 3-output neurons from [LogicNets project](https://github.com/Xilinx/logicnets)
-
-Further details about the benchmarks is temporarily withheld from the public because the next year's contest 
-(IWLS 2023 Programming Contest) may reuse the current benchmarks and/or propose similar ones.
-
-The goal of the future contest is expected to be similar (synthesizing minimal circuits for a set of 
-benchmark functions) while allowing for any two-input nodes (not only and-nodes, as in this year's contest).
-  
-The details of the next year's contest (in particular, how two-input xor-nodes will be prepresented in the 
-traditional AIGER format, which allows only for two-input and-nodes) will be announced later. This preliminary 
-announcement it believed to be helpful because it gives future participants more time to plan and prepare in advance.
-
----
-
-### Participants
-
-* Team EPFL (École Polytechnique Fédérale de Lausanne)
-  * Andrea Costamagna, Siang-Yun Lee, Alessandro Tempia Calvino, Hanyu Wang, Mingfei Yu, Professor Giovanni De Micheli
-* Team Fudan (Fudan University, Shanghai) 
-  * Yishan Zhang, Professor Chang Wu
-* Team NTU (National Taiwan University) 
-  * Hao-Ren Wang, Guo-Wei He, Professor Jie-Hong Roland Jiang
-* Team TUW (Technische Universität Wien) 
-  * Franz-Xaver Reichl, Friedrich Slivovsky, Stefan Szeider
-* Team UCAS (University of Chinese Academy of Sciences) 
-  * Liwei Ni
-* Team UCB (University of California, Berkeley) 
-  * Yukio Miyasaka
-* Team UFRGS/UFPEL (Federal University of Rio Grande do Sul / Federal University of Pelotas) 
-  * João Machado (UFPEL), Gabriel Ammes (UFRGS), Renato Peralta (UFRGS), Professor André Reis (UFRGS), Paulo Butzen (UFRGS), Leomar da Rosa (UFPEL), Professor Renato Ribas (UFRGS)
-
----
-       
-### Submissions
-
-With the participant's permission, the circuits submitted to the contest can be found [here](https://github.com/alanminko/iwls2022-ls-contest/tree/main/submissions).
-
----
-
-### Winners
-
-The results of the competition are summarized in the organizer's presentation 
-([PDF](https://github.com/alanminko/iwls2022-ls-contest/IWLS_2022_Contest_Presentation.pdf), 
-[PPT](https://github.com/alanminko/iwls2022-ls-contest/IWLS_2022_Contest_Presentation.ppt)).
-
-The winners are the three teams who received the highest score according to the [contest rules](https://github.com/alanminko/iwls2022-ls-contest/blob/main/IWLS_2022_Programming_Contest.pdf):
-
-* 1st place (score 9387)
-  * Team EPFL (École Polytechnique Fédérale de Lausanne) -- Andrea Costamagna, Siang-Yun Lee, Alessandro Tempia Calvino, Hanyu Wang, Mingfei Yu, Professor Giovanni De Micheli
-* 2nd place (score 9117)
-  * Team UCB (University of California, Berkeley) -- Yukio Miyasaka
-* 3rd place (score 8320)
-  * Team TUW (Technische Universität Wien) -- Franz-Xaver Reichl, Friedrich Slivovsky, Stefan Szeider
-
-Congratulations to the winners!
-
----
+The contest goal was to learn a Boolean function from a training set consisting of a small sample of random minterms of the function. The solutions were evaluated on a held-out set of minterms. The teams had the goal of maximizing the accuracy of the model while staying within a limit of 5,000 AIG nodes.
+The functions are provided in [Espresso PLA format](https://ultraespresso.di.univr.it/assets/data/espresso/espresso5.pdf) and the resulting models should be delivered in [binary AIGER format](http://fmv.jku.at/aiger/). The instructions provided to the participants are [here](https://github.com/iwls2020-lsml-contest/iwls2020-lsml-contest/blob/main/contest_description.pdf).
 
 
+The benchmarks are also available in this repository and is composed of 100 functions in PLA, as follows: 
 
+Function ID | Function Category
+------------ | -------------
+00-09 | 2 MSBs for *k-bits* adders, with *k* in {16, 32, 64, 128, 256}
+10-19 | MSB of *k-bit* dividers and remainder circuits for *k* in {16, 32, 64, 128, 256}
+20-29 | MSB and middle bit of *k-bit* multipliers for *k* in {8, 16, 32, 64, 128}
+30-39 | *k-bit* comparators for *k* in {10, 20, ..., 100}
+40-49 | LSB and middle bit of *k*-bit square-rooters with *k* in {16, 32, 64, 128, 256}
+50-59 | 10 outputs of PicoJava designs with 16-200 inputs and roughly balanced on- & offset
+60-69 | 10 outputs of MCNC i10 design with 16-200 inputs and roughly balanced on- & offset
+70-79 | 5 other outputs from MCNC benchmarks + 5 symmetric functions of 16 inputs 
+80-89 | 10 binary classification problems from MNIST group comparison
+90-99 | 10 binary classification problems from CIFAR-10 group comparison
 
-
-
+For further details on the contest including details on the benchmarks as well as the solutions of the different teams and their performance, please refer to our [arXiv paper](https://arxiv.org/abs/2012.02530).
 
 
